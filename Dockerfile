@@ -1,4 +1,4 @@
-FROM superiorornot/arch-base-spacevim:20200423-1
+FROM superiorornot/arch-base-spacevim
 
 RUN pacman -Syu --noconfirm
 
