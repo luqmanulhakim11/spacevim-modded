@@ -8,6 +8,8 @@ ENV TERM xterm-256color
 
 RUN useradd --create-home --home-dir $HOME -s /usr/bin/fish me && chown -R me $HOME
 
+RUN echo me:password | chpasswd
+
 USER me
 
 WORKDIR $HOME
