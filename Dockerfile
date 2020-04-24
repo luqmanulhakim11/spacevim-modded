@@ -1,4 +1,4 @@
-FROM superiorornot/arch-base-spacevim
+FROM superiorornot/arch-base-build-spacevim:latest
 
 RUN pacman -Syu --noconfirm
 
@@ -20,5 +20,7 @@ RUN git clone --bare https://gitlab.com/luqmanulhakim11/dotfiles.git &&\
 RUN $HOME/setup.sh
 
 RUN nvim --headless +'call dein#install()' +qall
+
+RUN mkdir $HOME/projects && chown -R me:me $HOME/projects
 
 ENTRYPOINT /usr/bin/fish
